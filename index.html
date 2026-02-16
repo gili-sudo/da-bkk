@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K74J3SVTXK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-K74J3SVTXK');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="DA-BKK — Structured digital asset advisory in Bangkok, Thailand. Bitcoin education, crypto clarity, blockchain strategy for individuals and businesses. Not financial advice. | ที่ปรึกษาสินทรัพย์ดิจิทัล กรุงเทพ ไทย">
+<meta name="keywords" content="crypto advisory Thailand, digital asset Bangkok, bitcoin education Thai, crypto consultant Bangkok, blockchain advisory Thailand, crypto safety Thailand, สินทรัพย์ดิจิทัล ที่ปรึกษา กรุงเทพ, คริปโต ที่ปรึกษา ไทย, บิทคอยน์ ไทย, บล็อกเชน ที่ปรึกษา, ความปลอดภัย คริปโต">
+<meta property="og:title" content="DA-BKK | Digital Asset Advisory Bangkok">
+<meta property="og:description" content="Structured crypto education and digital asset advisory for individuals and businesses in Thailand.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://da-bkk.com">
+<title>DA-BKK | Digital Asset Advisory Bangkok Thailand | คริปโต ที่ปรึกษา กรุงเทพ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #C8A84B;
+  --gold-light: #E8C96A;
+  --gold-dim: rgba(200,168,75,0.15);
+  --dark: #0C0C0A;
+  --dark-2: #141412;
+  --dark-3: #1E1E1A;
+  --text-dark: #F0EBE0;
+  --text-dark-muted: #968F80;
+  --white: #FFFFFF;
+  --light: #F8F6F2;
+  --light-2: #F0EDE6;
+  --light-border: rgba(0,0,0,0.08);
+  --text-light: #1A1A18;
+  --text-light-muted: #6B6760;
+  --border-dark: rgba(200,168,75,0.16);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--white);color:var(--text-light);font-family:'DM Mono',monospace;font-weight:300;overflow-x:hidden;}
+
+/* NAV — dark */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 40px;display:flex;justify-content:space-between;align-items:center;background:rgba(12,12,10,0.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border-dark);}
+.logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;letter-spacing:0.18em;color:var(--gold);text-decoration:none;}
+.logo span{color:var(--text-dark-muted);font-weight:300;}
+.nav-links{display:flex;gap:28px;list-style:none;}
+.nav-links a{color:var(--text-dark-muted);text-decoration:none;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;transition:color 0.3s;}
+.nav-links a:hover{color:var(--gold);}
+.nav-right{display:flex;align-items:center;gap:14px;}
+.lang-toggle{display:flex;gap:6px;}
+.lang-btn{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.15em;background:none;border:1px solid var(--border-dark);color:var(--text-dark-muted);padding:5px 10px;cursor:pointer;transition:all 0.3s;}
+.lang-btn.active,.lang-btn:hover{border-color:var(--gold);color:var(--gold);}
+.nav-mobile-toggle{display:none;background:none;border:none;color:var(--text-dark-muted);font-size:22px;cursor:pointer;padding:0;}
+.mobile-menu{display:none;position:fixed;top:61px;left:0;right:0;background:rgba(12,12,10,0.98);backdrop-filter:blur(16px);padding:20px 40px 28px;border-bottom:1px solid var(--border-dark);z-index:99;flex-direction:column;gap:0;}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{color:var(--text-dark-muted);text-decoration:none;font-size:13px;letter-spacing:0.18em;text-transform:uppercase;padding:14px 0;border-bottom:1px solid var(--border-dark);transition:color 0.3s;}
+.mobile-menu a:last-child{border-bottom:none;}
+.mobile-menu a:hover{color:var(--gold);}
+
+/* HERO — dark */
+#home{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:120px 40px 80px;position:relative;overflow:hidden;background:var(--dark);}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 65% 50%,rgba(200,168,75,0.07) 0%,transparent 70%),radial-gradient(ellipse 40% 50% at 10% 80%,rgba(200,168,75,0.04) 0%,transparent 60%);}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(200,168,75,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(200,168,75,0.04) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black,transparent);}
+.hero-eyebrow{font-size:11px;letter-spacing:0.35em;color:var(--gold);text-transform:uppercase;margin-bottom:20px;opacity:0;animation:fadeUp 0.7s ease 0.2s forwards;position:relative;}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,6.5vw,90px);font-weight:300;line-height:1.05;letter-spacing:-0.01em;max-width:820px;opacity:0;animation:fadeUp 0.7s ease 0.35s forwards;position:relative;color:var(--text-dark);}
+.hero-title em{font-style:italic;color:var(--gold);}
+.hero-sub{margin-top:28px;max-width:560px;font-size:13px;line-height:1.95;color:var(--text-dark-muted);opacity:0;animation:fadeUp 0.7s ease 0.5s forwards;position:relative;}
+.hero-note{margin-top:16px;max-width:520px;font-size:11px;line-height:1.75;color:var(--text-dark-muted);opacity:0;padding-left:14px;border-left:2px solid var(--gold-dim);animation:fadeUp 0.7s ease 0.62s forwards;position:relative;}
+.hero-cta{margin-top:40px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;opacity:0;animation:fadeUp 0.7s ease 0.75s forwards;position:relative;}
+.btn-gold{background:var(--gold);color:var(--dark);padding:13px 28px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;transition:background 0.3s;display:inline-block;border:none;cursor:pointer;}
+.btn-gold:hover{background:var(--gold-light);}
+.btn-outline-light{color:var(--text-dark-muted);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid rgba(200,168,75,0.3);padding-bottom:2px;transition:color 0.3s;}
+.btn-outline-light:hover{color:var(--text-dark);}
+
+/* TRUST BAR — light */
+.trust-bar{background:var(--light);border-bottom:1px solid var(--light-border);padding:18px 40px;display:flex;justify-content:center;gap:40px;flex-wrap:wrap;}
+.trust-item{display:flex;align-items:center;gap:9px;font-size:10px;letter-spacing:0.2em;color:var(--text-light-muted);text-transform:uppercase;}
+.trust-dot{width:4px;height:4px;background:var(--gold);border-radius:50%;flex-shrink:0;}
+
+/* DIVIDER */
+.divider-light{height:1px;background:var(--light-border);}
+.divider-gold{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0.25;}
+
+/* SECTION BASE — light */
+.section-wrap{max-width:1100px;margin:0 auto;padding:88px 40px;}
+.section-label{font-size:10px;letter-spacing:0.35em;color:var(--gold);text-transform:uppercase;margin-bottom:12px;}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,50px);font-weight:300;line-height:1.1;margin-bottom:14px;color:var(--text-light);}
+.section-sub{font-size:13px;line-height:1.9;color:var(--text-light-muted);max-width:600px;margin-bottom:48px;}
+
+/* WHY NOW — light bg */
+#world{background:var(--white);}
+.world-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--light-border);}
+.world-card{background:var(--white);padding:32px 28px;border:1px solid var(--light-border);}
+.world-icon{font-size:22px;margin-bottom:14px;color:var(--gold);}
+.world-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;margin-bottom:10px;color:var(--text-light);}
+.world-text{font-size:11px;line-height:1.9;color:var(--text-light-muted);}
+
+/* SERVICES — light bg */
+#services{background:var(--light);}
+.packages-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--light-border);margin-bottom:32px;}
+.pkg{background:var(--white);padding:40px 36px;position:relative;overflow:hidden;transition:box-shadow 0.3s;border:1px solid var(--light-border);}
+.pkg:hover{box-shadow:0 4px 32px rgba(0,0,0,0.07);}
+.pkg::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform 0.4s ease;}
+.pkg:hover::after{transform:scaleX(1);}
+.pkg-audience{font-size:10px;letter-spacing:0.3em;color:var(--gold);text-transform:uppercase;margin-bottom:10px;}
+.pkg-name{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;line-height:1.15;margin-bottom:6px;color:var(--text-light);}
+.pkg-tagline{font-size:12px;color:var(--text-light-muted);letter-spacing:0.03em;margin-bottom:18px;font-style:italic;font-family:'Cormorant Garamond',serif;}
+.pkg-who{font-size:12px;line-height:1.9;color:var(--text-light-muted);margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--light-border);}
+.pkg-topics{margin-bottom:28px;}
+.pkg-topics-label{font-size:10px;letter-spacing:0.2em;color:var(--text-light);text-transform:uppercase;margin-bottom:10px;}
+.pkg-topics li{font-size:11px;color:var(--text-light-muted);padding:5px 0 5px 16px;position:relative;list-style:none;line-height:1.65;}
+.pkg-topics li::before{content:'—';position:absolute;left:0;color:var(--gold);font-size:10px;}
+.pkg-bottom{border-top:1px solid var(--light-border);padding-top:20px;}
+.pkg-price{font-size:16px;color:var(--text-light);letter-spacing:0.02em;font-family:'Cormorant Garamond',serif;font-weight:400;}
+.pkg-format{font-size:10px;color:var(--text-light-muted);margin-top:6px;letter-spacing:0.1em;line-height:1.6;}
+.disclaimer-box{padding:22px 26px;border:1px solid var(--light-border);background:var(--white);display:flex;gap:14px;align-items:flex-start;}
+.disc-icon{color:var(--gold);font-size:14px;margin-top:1px;flex-shrink:0;}
+.disc-text{font-size:11px;line-height:1.85;color:var(--text-light-muted);}
+.disc-text strong{color:var(--text-light);font-weight:400;}
+
+/* ABOUT — light */
+#about{background:var(--white);}
+.about-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:72px;align-items:start;}
+.about-img-wrap{position:relative;}
+.about-img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center top;display:block;}
+.about-img-caption{padding:12px 16px;background:var(--light);border:1px solid var(--light-border);border-top:none;font-size:10px;letter-spacing:0.15em;color:var(--text-light-muted);text-transform:uppercase;}
+.about-content .section-title{margin-bottom:8px;}
+.about-name-sub{font-size:12px;color:var(--gold);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:26px;}
+.about-content p{font-size:12px;line-height:2.05;color:var(--text-light-muted);margin-bottom:16px;}
+.about-content p strong{color:var(--text-light);font-weight:400;}
+.about-pillars{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--light-border);margin-top:28px;}
+.pillar{background:var(--light);padding:18px 16px;}
+.pillar-num{font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--gold);line-height:1;}
+.pillar-txt{font-size:10px;letter-spacing:0.14em;color:var(--text-light-muted);text-transform:uppercase;margin-top:5px;line-height:1.5;}
+
+/* CONTACT — light */
+#contact{background:var(--light);}
+.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:64px;}
+.contact-left h3{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3vw,38px);font-weight:300;line-height:1.2;margin-bottom:14px;color:var(--text-light);}
+.contact-left p{font-size:12px;line-height:2;color:var(--text-light-muted);margin-bottom:28px;}
+.contact-details{display:flex;flex-direction:column;gap:8px;margin-bottom:0;}
+.c-item{display:flex;gap:14px;align-items:flex-start;padding:12px 14px;border:1px solid var(--light-border);background:var(--white);}
+.c-label{font-size:10px;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase;min-width:54px;margin-top:1px;flex-shrink:0;}
+.c-val{font-size:11px;color:var(--text-light-muted);line-height:1.6;}
+.contact-form{display:flex;flex-direction:column;gap:14px;}
+.fg{display:flex;flex-direction:column;gap:6px;}
+.fg label{font-size:10px;letter-spacing:0.25em;color:var(--text-light-muted);text-transform:uppercase;}
+.fg input,.fg select,.fg textarea{background:var(--white);border:1px solid var(--light-border);color:var(--text-light);padding:12px 14px;font-family:'DM Mono',monospace;font-size:12px;outline:none;transition:border-color 0.3s;width:100%;-webkit-appearance:none;}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--gold);}
+.fg textarea{height:96px;resize:none;}
+.fg select option{background:var(--white);}
+.form-note{font-size:10px;color:var(--text-light-muted);line-height:1.7;margin-top:2px;}
+
+/* FOOTER — dark */
+footer{background:var(--dark-2);padding:28px 40px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border-dark);flex-wrap:wrap;gap:14px;}
+.footer-copy{font-size:10px;color:var(--text-dark-muted);letter-spacing:0.08em;line-height:1.8;}
+.footer-links{display:flex;gap:18px;flex-wrap:wrap;}
+.footer-links a{font-size:10px;letter-spacing:0.15em;color:var(--text-dark-muted);text-decoration:none;text-transform:uppercase;transition:color 0.3s;}
+.footer-links a:hover{color:var(--gold);}
+
+/* ANIM */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.reveal{opacity:1;transform:translateY(0);transition:opacity 0.65s ease,transform 0.65s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.d1{transition-delay:0.08s;}.d2{transition-delay:0.16s;}.d3{transition-delay:0.24s;}.d4{transition-delay:0.32s;}
+
+/* LANG */
+.th{display:none;}.en{display:inline;}
+body.thai .th{display:inline;}body.thai .en{display:none;}
+.th-b{display:none;}.en-b{display:block;}
+body.thai .th-b{display:block;}body.thai .en-b{display:none;}
+
+/* MOBILE */
+@media(max-width:768px){
+  nav{padding:15px 20px;}
+  .nav-links{display:none;}
+  .nav-mobile-toggle{display:block;}
+  #home{padding:96px 20px 60px;}
+  .section-wrap{padding:56px 20px;}
+  .trust-bar{padding:14px 20px;gap:16px;}
+  .packages-grid{grid-template-columns:1fr;}
+  .about-grid{grid-template-columns:1fr;gap:32px;}
+  .world-grid{grid-template-columns:1fr;}
+  .contact-grid{grid-template-columns:1fr;gap:36px;}
+  .about-pillars{grid-template-columns:repeat(2,1fr);}
+  footer{flex-direction:column;align-items:flex-start;}
+  .hero-title{font-size:clamp(40px,10vw,58px);}
+  .pkg{padding:28px 22px;}
+  .world-card{border:none;border-bottom:1px solid var(--light-border);}
+}
+
+/* WHATSAPP */
+.wa-btn{
+  position:fixed; bottom:28px; right:28px; z-index:999;
+  width:56px; height:56px; border-radius:50%;
+  background:#25D366; display:flex; align-items:center; justify-content:center;
+  box-shadow:0 4px 20px rgba(37,211,102,0.4);
+  text-decoration:none; transition:transform 0.3s, box-shadow 0.3s;
+}
+.wa-btn:hover{transform:scale(1.08);box-shadow:0 6px 28px rgba(37,211,102,0.5);}
+.wa-btn svg{width:28px;height:28px;fill:white;}
+.wa-tooltip{
+  position:absolute; right:68px; background:var(--dark);
+  color:var(--text-dark); font-family:'DM Mono',monospace;
+  font-size:10px; letter-spacing:0.15em; padding:7px 12px;
+  white-space:nowrap; opacity:0; transition:opacity 0.3s; pointer-events:none;
+}
+.wa-btn:hover .wa-tooltip{opacity:1;}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#home" class="logo">DA<span>–</span>BKK</a>
+  <ul class="nav-links">
+    <li><a href="#home"><span class="en">Home</span><span class="th">หน้าแรก</span></a></li>
+    <li><a href="#services"><span class="en">Services</span><span class="th">บริการ</span></a></li>
+    <li><a href="#about"><span class="en">About</span><span class="th">เกี่ยวกับ</span></a></li>
+    <li><a href="#contact"><span class="en">Contact</span><span class="th">ติดต่อ</span></a></li>
+    <li><a href="faq.html"><span class="en">FAQ</span><span class="th">คำถาม</span></a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('en',this)">EN</button>
+      <button class="lang-btn" onclick="setLang('th',this)">TH</button>
+    </div>
+    <button class="nav-mobile-toggle" onclick="toggleMenu()">☰</button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home" onclick="closeMobile()"><span class="en">Home</span><span class="th">หน้าแรก</span></a>
+  <a href="#services" onclick="closeMobile()"><span class="en">Services</span><span class="th">บริการ</span></a>
+  <a href="#about" onclick="closeMobile()"><span class="en">About</span><span class="th">เกี่ยวกับ</span></a>
+  <a href="#contact" onclick="closeMobile()"><span class="en">Contact</span><span class="th">ติดต่อ</span></a>
+  <a href="faq.html" onclick="closeMobile()"><span class="en">FAQ</span><span class="th">คำถาม</span></a>
+</div>
+
+<!-- HERO — dark -->
+<section id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <p class="hero-eyebrow">
+    <span class="en">Bangkok · Digital Asset Advisory · Est. 2025</span>
+    <span class="th">กรุงเทพฯ · ที่ปรึกษาสินทรัพย์ดิจิทัล · ก่อตั้ง 2568</span>
+  </p>
+  <h1 class="hero-title">
+    <span class="en">Your trusted guide<br>to <em>digital assets.</em></span>
+    <span class="th">ที่ปรึกษาที่คุณไว้วางใจ<br>สำหรับ<em>สินทรัพย์ดิจิทัล</em></span>
+  </h1>
+  <p class="hero-sub">
+    <span class="en">Bitcoin, blockchain, and digital assets are becoming part of everyday life. Whether you are just starting to explore or looking to go deeper — we are here to guide you with clarity, patience, and no pressure.</span>
+    <span class="th">บิทคอยน์ บล็อกเชน และสินทรัพย์ดิจิทัลกำลังกลายเป็นส่วนหนึ่งของชีวิตประจำวัน ไม่ว่าคุณเพิ่งเริ่มสำรวจหรือต้องการศึกษาให้ลึกขึ้น — เราพร้อมนำทางคุณด้วยความชัดเจน ความอดทน และไม่มีแรงกดดัน</span>
+  </p>
+  <p class="hero-note">
+    <span class="en">DA-BKK provides structured education and strategic frameworks. We are not licensed financial advisors and do not provide regulated financial advice.</span>
+    <span class="th">DA-BKK ให้ความรู้เชิงโครงสร้างและกรอบกลยุทธ์ เราไม่ใช่ที่ปรึกษาทางการเงินที่ได้รับใบอนุญาต</span>
+  </p>
+  <div class="hero-cta">
+    <a href="#contact" class="btn-gold"><span class="en">Book a Session</span><span class="th">จองเซสชัน</span></a>
+    <a href="#services" class="btn-outline-light"><span class="en">Explore Services →</span><span class="th">ดูบริการ →</span></a>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><div class="trust-dot"></div><span class="en">In-Person Bangkok</span><span class="th">พบตัวที่กรุงเทพฯ</span></div>
+  <div class="trust-item"><div class="trust-dot"></div><span class="en">Online Available</span><span class="th">ออนไลน์ได้</span></div>
+  <div class="trust-item"><div class="trust-dot"></div><span class="en">English & Thai</span><span class="th">ภาษาอังกฤษและไทย</span></div>
+  <div class="trust-item"><div class="trust-dot"></div><span class="en">Individuals & Businesses</span><span class="th">บุคคลและธุรกิจ</span></div>
+  <div class="trust-item"><div class="trust-dot"></div><span class="en">Active Since 2020</span><span class="th">ประสบการณ์ตั้งแต่ปี 2563</span></div>
+</div>
+
+<div class="divider-light"></div>
+
+<!-- WHY NOW — white -->
+<section id="world">
+  <div class="section-wrap">
+    <div class="section-label reveal"><span class="en">01 — Why Digital Assets Matter</span><span class="th">01 — ทำไมสินทรัพย์ดิจิทัลจึงสำคัญ</span></div>
+    <h2 class="section-title reveal">
+      <span class="en">A new era of finance<br>is already here.</span>
+      <span class="th">ยุคใหม่ของการเงิน<br>มาถึงแล้ว</span>
+    </h2>
+    <p class="section-sub reveal">
+      <span class="en">From governments and global institutions to everyday individuals — understanding digital assets is becoming essential. We are here to make that understanding accessible, safe, and structured for everyone in Thailand.</span>
+      <span class="th">จากรัฐบาลและสถาบันระดับโลกไปจนถึงบุคคลทั่วไป — การเข้าใจสินทรัพย์ดิจิทัลกำลังกลายเป็นสิ่งจำเป็น เราอยู่ที่นี่เพื่อทำให้ความเข้าใจนั้นเข้าถึงได้ ปลอดภัย และมีโครงสร้างสำหรับทุกคนในไทย</span>
+    </p>
+    <div class="world-grid">
+      <div class="world-card reveal d1">
+        <div class="world-icon">₿</div>
+        <div class="world-title"><span class="en">Bitcoin & Digital Assets</span><span class="th">บิทคอยน์และสินทรัพย์ดิจิทัล</span></div>
+        <div class="world-text">
+          <span class="en">Bitcoin is now held by governments, pension funds, and major institutions worldwide. Understanding it gives you confidence — knowing what it is, how it works, and how to engage with it safely.</span>
+          <span class="th">บิทคอยน์ถูกถือครองโดยรัฐบาล กองทุนบำเหน็จบำนาญ และสถาบันสำคัญทั่วโลก การเข้าใจมันให้ความมั่นใจ — รู้ว่ามันคืออะไร ทำงานอย่างไร และมีส่วนร่วมอย่างปลอดภัยได้อย่างไร</span>
+        </div>
+      </div>
+      <div class="world-card reveal d2">
+        <div class="world-icon">⬡</div>
+        <div class="world-title"><span class="en">Blockchain & AI</span><span class="th">บล็อกเชนและ AI</span></div>
+        <div class="world-text">
+          <span class="en">Blockchain and AI are reshaping how businesses operate — bringing transparency, security, speed, and new forms of ownership. Understanding this technology today means being prepared for tomorrow.</span>
+          <span class="th">บล็อกเชนและ AI กำลังเปลี่ยนรูปแบบการดำเนินธุรกิจ — สร้างความโปร่งใส ความปลอดภัย ความเร็ว และรูปแบบความเป็นเจ้าของใหม่ การเข้าใจเทคโนโลยีนี้วันนี้หมายความว่าคุณพร้อมสำหรับวันพรุ่งนี้</span>
+        </div>
+      </div>
+      <div class="world-card reveal d3">
+        <div class="world-icon">◈</div>
+        <div class="world-title"><span class="en">Thailand & Southeast Asia</span><span class="th">ไทยและเอเชียตะวันออกเฉียงใต้</span></div>
+        <div class="world-text">
+          <span class="en">Southeast Asia is one of the world's fastest-growing digital asset markets. Thailand is developing its digital economy with purpose. The opportunity to learn and engage wisely is right now.</span>
+          <span class="th">เอเชียตะวันออกเฉียงใต้เป็นหนึ่งในตลาดสินทรัพย์ดิจิทัลที่เติบโตเร็วที่สุดในโลก ไทยกำลังพัฒนาเศรษฐกิจดิจิทัลอย่างมีจุดมุ่งหมาย โอกาสในการเรียนรู้และมีส่วนร่วมอย่างชาญฉลาดคือตอนนี้</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider-light"></div>
+
+<!-- SERVICES — light -->
+<section id="services">
+  <div class="section-wrap">
+    <div class="section-label reveal"><span class="en">02 — Services & Pricing</span><span class="th">02 — บริการและราคา</span></div>
+    <h2 class="section-title reveal">
+      <span class="en">Wherever you are,<br>there is a path forward.</span>
+      <span class="th">ไม่ว่าคุณอยู่ที่ไหน<br>มีเส้นทางข้างหน้าเสมอ</span>
+    </h2>
+    <p class="section-sub reveal">
+      <span class="en">Every journey with digital assets starts somewhere. We meet you exactly where you are — no judgment, no complexity, just the right guidance for your situation.</span>
+      <span class="th">ทุกการเดินทางกับสินทรัพย์ดิจิทัลเริ่มต้นจากที่ไหนสักแห่ง เราพบคุณในจุดที่คุณอยู่ — ไม่ตัดสิน ไม่ซับซ้อน แค่คำแนะนำที่ถูกต้องสำหรับสถานการณ์ของคุณ</span>
+    </p>
+
+    <div class="packages-grid">
+
+      <!-- CLARITY SESSION -->
+      <div class="pkg reveal d1">
+        <div class="pkg-audience"><span class="en">Individual · Beginner</span><span class="th">บุคคล · ผู้เริ่มต้น</span></div>
+        <div class="pkg-name"><span class="en">Clarity Session</span><span class="th">เซสชันความชัดเจน</span></div>
+        <div class="pkg-tagline"><span class="en">"I've heard about Bitcoin — but I want to actually understand it."</span><span class="th">"ได้ยินเรื่องบิทคอยน์ — แต่อยากเข้าใจจริงๆ"</span></div>
+        <div class="pkg-who">
+          <span class="en">You've heard the names — Bitcoin, Ethereum, USDT. Maybe you've seen others buying it. Maybe someone has approached you with an opportunity and you weren't sure what to make of it. This session gives you a clear, honest, and complete picture — so you feel informed, safe, and confident.</span>
+          <span class="th">คุณได้ยินชื่อ — บิทคอยน์ อีเธอเรียม USDT บางทีเห็นคนอื่นซื้อ บางทีมีคนมาเสนอโอกาสและคุณไม่แน่ใจ เซสชันนี้ให้ภาพที่ชัดเจน ซื่อสัตย์ และครบถ้วน — เพื่อให้คุณรู้สึกมีความรู้ ปลอดภัย และมั่นใจ</span>
+        </div>
+        <div class="pkg-topics">
+          <div class="pkg-topics-label"><span class="en">What we cover</span><span class="th">สิ่งที่เราครอบคลุม</span></div>
+          <ul>
+            <li><span class="en">What Bitcoin, Ethereum & stablecoins actually are</span><span class="th">บิทคอยน์ อีเธอเรียม และ Stablecoins คืออะไร</span></li>
+            <li><span class="en">How blockchain networks work — simply explained</span><span class="th">เครือข่ายบล็อกเชนทำงานอย่างไร — อธิบายให้เข้าใจง่าย</span></li>
+            <li><span class="en">Wallets — how to open, use & protect yours</span><span class="th">กระเป๋าเงิน — วิธีเปิด ใช้ และป้องกัน</span></li>
+            <li><span class="en">Secret phrases — what they mean & how to keep them safe</span><span class="th">ซีดฟราส — ความหมายและวิธีเก็บให้ปลอดภัย</span></li>
+            <li><span class="en">Exchanges — which to trust and how to use them</span><span class="th">Exchange — อันไหนน่าเชื่อถือและใช้อย่างไร</span></li>
+            <li><span class="en">How to recognise scams, fake projects & manipulation</span><span class="th">วิธีจดจำการหลอกลวง โครงการปลอม และการบิดเบือน</span></li>
+            <li><span class="en">Trusted sources — what to read, watch & follow</span><span class="th">แหล่งข้อมูลที่เชื่อถือได้ — อะไรควรอ่าน ดู และติดตาม</span></li>
+          </ul>
+        </div>
+        <div class="pkg-bottom">
+          <div class="pkg-price">฿9,900</div>
+          <div class="pkg-format"><span class="en">1 session · Online or In-Person Bangkok · English or Thai</span><span class="th">1 เซสชัน · ออนไลน์หรือพบตัวที่กรุงเทพฯ · ภาษาอังกฤษหรือไทย</span></div>
+        </div>
+      </div>
+
+      <!-- STRUCTURED PROGRAM -->
+      <div class="pkg reveal d2">
+        <div class="pkg-audience"><span class="en">Individual · Growing Knowledge</span><span class="th">บุคคล · ขยายความรู้</span></div>
+        <div class="pkg-name"><span class="en">Structured Program</span><span class="th">โปรแกรมเชิงโครงสร้าง</span></div>
+        <div class="pkg-tagline"><span class="en">"I have some crypto — I want to really understand what I'm doing."</span><span class="th">"มีคริปโตอยู่บ้าง — อยากเข้าใจอย่างแท้จริงว่ากำลังทำอะไร"</span></div>
+        <div class="pkg-who">
+          <span class="en">You've taken your first steps. You hold some crypto, maybe use an exchange. But you want more than basics — you want to truly understand the space, make confident decisions, and know exactly how to protect what you have.</span>
+          <span class="th">คุณก้าวแรกไปแล้ว ถือคริปโตบ้าง บางทีใช้ exchange แต่คุณต้องการมากกว่าพื้นฐาน — อยากเข้าใจพื้นที่นี้อย่างแท้จริง ตัดสินใจได้อย่างมั่นใจ และรู้วิธีปกป้องสิ่งที่มี</span>
+        </div>
+        <div class="pkg-topics">
+          <div class="pkg-topics-label"><span class="en">What we cover</span><span class="th">สิ่งที่เราครอบคลุม</span></div>
+          <ul>
+            <li><span class="en">Deep dive: Bitcoin, Ethereum, Layer 2s, DeFi basics</span><span class="th">เจาะลึก: บิทคอยน์ อีเธอเรียม Layer 2 และ DeFi เบื้องต้น</span></li>
+            <li><span class="en">Market cycles — history, patterns & what they mean for you</span><span class="th">วัฏจักรตลาด — ประวัติ รูปแบบ และความหมายสำหรับคุณ</span></li>
+            <li><span class="en">Tokenomics — how to evaluate a project properly</span><span class="th">Tokenomics — วิธีประเมินโครงการอย่างถูกต้อง</span></li>
+            <li><span class="en">Portfolio structure & risk awareness — frameworks, not advice</span><span class="th">โครงสร้างพอร์ตและการตระหนักถึงความเสี่ยง — กรอบ ไม่ใช่คำแนะนำ</span></li>
+            <li><span class="en">Advanced wallet security & cold storage</span><span class="th">ความปลอดภัยกระเป๋าเงินขั้นสูงและ cold storage</span></li>
+            <li><span class="en">Stablecoins — practical uses, risks & what to avoid</span><span class="th">Stablecoins — การใช้งานจริง ความเสี่ยง และสิ่งที่ควรหลีกเลี่ยง</span></li>
+            <li><span class="en">Building your own ongoing education framework</span><span class="th">การสร้างกรอบการศึกษาด้วยตนเองอย่างต่อเนื่อง</span></li>
+          </ul>
+        </div>
+        <div class="pkg-bottom">
+          <div class="pkg-price">฿30,000 – ฿50,000</div>
+          <div class="pkg-format"><span class="en">3–4 sessions over 4–6 weeks · Online or In-Person · English or Thai</span><span class="th">3–4 เซสชันใน 4–6 สัปดาห์ · ออนไลน์หรือพบตัว · ภาษาอังกฤษหรือไทย</span></div>
+        </div>
+      </div>
+
+      <!-- BUSINESS PROGRAM -->
+      <div class="pkg reveal d3">
+        <div class="pkg-audience"><span class="en">Business · SME & Entrepreneurs</span><span class="th">ธุรกิจ · SME และผู้ประกอบการ</span></div>
+        <div class="pkg-name"><span class="en">Business Program</span><span class="th">โปรแกรมธุรกิจ</span></div>
+        <div class="pkg-tagline"><span class="en">"I want my business to understand and benefit from this space."</span><span class="th">"อยากให้ธุรกิจเข้าใจและได้รับประโยชน์จากพื้นที่นี้"</span></div>
+        <div class="pkg-who">
+          <span class="en">Your business is navigating a world where digital assets, blockchain infrastructure, and tokenization are becoming real considerations. This program gives you and your team a structured foundation — tailored to your industry, your size, and your questions.</span>
+          <span class="th">ธุรกิจของคุณกำลังดำเนินการในโลกที่สินทรัพย์ดิจิทัล โครงสร้างพื้นฐานบล็อกเชน และการ tokenization กลายเป็นสิ่งที่ต้องพิจารณาจริงๆ โปรแกรมนี้ให้รากฐานที่มีโครงสร้างสำหรับคุณและทีม</span>
+        </div>
+        <div class="pkg-topics">
+          <div class="pkg-topics-label"><span class="en">What we cover</span><span class="th">สิ่งที่เราครอบคลุม</span></div>
+          <ul>
+            <li><span class="en">Digital asset risk mapping — where is your exposure</span><span class="th">การทำแผนที่ความเสี่ยงสินทรัพย์ดิจิทัล</span></li>
+            <li><span class="en">Blockchain for business — transparency, security & speed</span><span class="th">บล็อกเชนสำหรับธุรกิจ — ความโปร่งใส ความปลอดภัย ความเร็ว</span></li>
+            <li><span class="en">Stablecoin & treasury strategy fundamentals</span><span class="th">พื้นฐานกลยุทธ์ Stablecoin และคลังสำรอง</span></li>
+            <li><span class="en">Token, platform & network opportunities for your business</span><span class="th">โอกาสโทเคน แพลตฟอร์ม และเครือข่ายสำหรับธุรกิจ</span></li>
+            <li><span class="en">Internal digital asset policy & operational guidance</span><span class="th">นโยบายสินทรัพย์ดิจิทัลภายในและคำแนะนำการดำเนินงาน</span></li>
+            <li><span class="en">Connections to developers, legal & financial specialists</span><span class="th">การเชื่อมต่อกับนักพัฒนา ที่ปรึกษากฎหมาย และผู้เชี่ยวชาญ</span></li>
+            <li><span class="en">Ongoing availability for questions & strategic decisions</span><span class="th">ความพร้อมอย่างต่อเนื่องสำหรับคำถามและการตัดสินใจเชิงกลยุทธ์</span></li>
+          </ul>
+        </div>
+        <div class="pkg-bottom">
+          <div class="pkg-price"><span class="en">Starting from ฿50,000</span><span class="th">เริ่มต้นจาก ฿50,000</span></div>
+          <div class="pkg-format"><span class="en">Tailored scope & sessions · Online or In-Person · English or Thai</span><span class="th">ขอบเขตและเซสชันที่ปรับได้ · ออนไลน์หรือพบตัว · ภาษาอังกฤษหรือไทย</span></div>
+        </div>
+      </div>
+
+      <!-- CORPORATE WORKSHOP -->
+      <div class="pkg reveal d4">
+        <div class="pkg-audience"><span class="en">Corporate · Leadership Teams</span><span class="th">องค์กร · ทีมผู้บริหาร</span></div>
+        <div class="pkg-name"><span class="en">Corporate Workshop</span><span class="th">เวิร์กช็อปองค์กร</span></div>
+        <div class="pkg-tagline"><span class="en">"Our leadership team needs strategic clarity on digital assets."</span><span class="th">"ทีมผู้บริหารต้องการความชัดเจนเชิงกลยุทธ์เกี่ยวกับสินทรัพย์ดิจิทัล"</span></div>
+        <div class="pkg-who">
+          <span class="en">A professional, structured workshop for corporate leadership teams. Designed to equip decision-makers with the knowledge, frameworks, and confidence to understand and act on digital asset opportunities and risks at an organisational level.</span>
+          <span class="th">เวิร์กช็อปที่มีความเป็นมืออาชีพและมีโครงสร้างสำหรับทีมผู้บริหารองค์กร ออกแบบเพื่อให้ผู้ตัดสินใจมีความรู้ กรอบ และความมั่นใจในการเข้าใจและดำเนินการเกี่ยวกับโอกาสและความเสี่ยงของสินทรัพย์ดิจิทัล</span>
+        </div>
+        <div class="pkg-topics">
+          <div class="pkg-topics-label"><span class="en">What we cover</span><span class="th">สิ่งที่เราครอบคลุม</span></div>
+          <ul>
+            <li><span class="en">Blockchain infrastructure — strategic overview for leaders</span><span class="th">โครงสร้างพื้นฐานบล็อกเชน — ภาพรวมเชิงกลยุทธ์สำหรับผู้นำ</span></li>
+            <li><span class="en">Digital asset risk frameworks & scenario planning</span><span class="th">กรอบความเสี่ยงสินทรัพย์ดิจิทัลและการวางแผนสถานการณ์</span></li>
+            <li><span class="en">Token launches, platforms & market entry strategy</span><span class="th">การเปิดตัวโทเคน แพลตฟอร์ม และกลยุทธ์การเข้าสู่ตลาด</span></li>
+            <li><span class="en">Regulatory landscape — Thailand & global</span><span class="th">กฎระเบียบ — ไทยและระดับโลก</span></li>
+            <li><span class="en">AI & blockchain convergence — what it means for your industry</span><span class="th">การหลอมรวม AI และบล็อกเชน — ความหมายสำหรับอุตสาหกรรมของคุณ</span></li>
+            <li><span class="en">Ecosystem connections — engineers, legal, finance & advisors</span><span class="th">การเชื่อมต่อระบบนิเวศ — วิศวกร กฎหมาย การเงิน และที่ปรึกษา</span></li>
+          </ul>
+        </div>
+        <div class="pkg-bottom">
+          <div class="pkg-price"><span class="en">Starting from ฿90,000</span><span class="th">เริ่มต้นจาก ฿90,000</span></div>
+          <div class="pkg-format"><span class="en">Full-day or multi-session · On-site preferred · English or Thai</span><span class="th">เต็มวันหรือหลายเซสชัน · แนะนำพบตัว · ภาษาอังกฤษหรือไทย</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="disclaimer-box reveal">
+      <div class="disc-icon">◈</div>
+      <div class="disc-text">
+        <span class="en"><strong>Important:</strong> DA-BKK provides structured digital asset education and strategic frameworks. We are not licensed financial advisors. Nothing here constitutes regulated financial advice or an invitation to invest. All decisions remain with the client. Where specialist advice is needed — financial, legal, or technical — we connect you to the right professionals.</span>
+        <span class="th"><strong>สำคัญ:</strong> DA-BKK ให้ความรู้สินทรัพย์ดิจิทัลเชิงโครงสร้างและกรอบกลยุทธ์ เราไม่ใช่ที่ปรึกษาทางการเงินที่ได้รับใบอนุญาต ไม่มีสิ่งใดที่นี่ถือเป็นคำแนะนำทางการเงินที่มีการกำกับดูแล การตัดสินใจทั้งหมดเป็นของลูกค้า</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider-light"></div>
+
+<!-- ABOUT — white -->
+<section id="about">
+  <div class="section-wrap">
+    <div class="about-grid">
+      <div class="about-img-wrap reveal">
+        <img class="about-img" src="https://raw.githubusercontent.com/gili-sudo/da-bkk/main/ChatGPT%20Image%20Feb%2016%2C%202026%2C%2001_48_37%20PM.png" alt="Gili Tuhsher in a consultation with a client in Bangkok Thailand">
+        <div class="about-img-caption">
+          <span class="en">DA-BKK · Bangkok, Thailand · Digital Asset Advisory</span>
+          <span class="th">DA-BKK · กรุงเทพฯ ประเทศไทย · ที่ปรึกษาสินทรัพย์ดิจิทัล</span>
+        </div>
+      </div>
+      <div class="about-content reveal d2">
+        <div class="section-label"><span class="en">03 — About</span><span class="th">03 — เกี่ยวกับ</span></div>
+        <h2 class="section-title">Gili Tuhsher</h2>
+        <div class="about-name-sub"><span class="en">Founder · DA-BKK · Bangkok</span><span class="th">ผู้ก่อตั้ง · DA-BKK · กรุงเทพฯ</span></div>
+        <p>
+          <span class="en">With a career spanning global sales and marketing across multiple industries, and <strong>over 13 years living and working across Asia</strong>, Gili Tuhsher brings a rare combination of people skills, business understanding, and deep regional knowledge to the world of digital assets.</span>
+          <span class="th">ด้วยอาชีพที่ครอบคลุมการขายและการตลาดระดับโลกในหลายอุตสาหกรรม และ<strong>มากกว่า 13 ปีที่อาศัยและทำงานในเอเชีย</strong> กิลี ทูเชอร์นำทักษะด้านผู้คน ความเข้าใจธุรกิจ และความรู้ในภูมิภาคที่ลึกซึ้งมาสู่โลกของสินทรัพย์ดิจิทัล</span>
+        </p>
+        <p>
+          <span class="en">Gili entered the digital asset space in <strong>2020</strong> as both investor and advisor — guiding and supporting <strong>hundreds of companies through IPOs, token launches, and market entries</strong>. He studied tokenomics, blockchain architecture, crypto history, market cycles, and network theory in depth, building a comprehensive understanding of how this industry truly works.</span>
+          <span class="th">กิลีเข้าสู่พื้นที่สินทรัพย์ดิจิทัลในปี <strong>2563</strong> ในฐานะทั้งนักลงทุนและที่ปรึกษา — ชี้แนะและสนับสนุน<strong>หลายร้อยบริษัทผ่าน IPO การเปิดตัวโทเคน และการเข้าสู่ตลาด</strong> เขาศึกษา tokenomics สถาปัตยกรรมบล็อกเชน ประวัติคริปโต วัฏจักรตลาด และทฤษฎีเครือข่ายอย่างลึกซึ้ง</span>
+        </p>
+        <p>
+          <span class="en">What he saw consistently was a gap — people and businesses with genuine curiosity and real exposure, but no trusted, clear, or structured place to turn. <strong>DA-BKK was founded to close that gap.</strong> To make the complex simple. To replace confusion with confidence. And to give every client — whether an individual or a corporation — the clarity they deserve.</span>
+          <span class="th">สิ่งที่เขาเห็นอย่างสม่ำเสมอคือช่องว่าง — ผู้คนและธุรกิจที่มีความอยากรู้และความเสี่ยงจริง แต่ไม่มีที่ที่เชื่อถือได้ ชัดเจน หรือมีโครงสร้างให้หันไปหา <strong>DA-BKK ก่อตั้งขึ้นเพื่อปิดช่องว่างนั้น</strong> ทำให้สิ่งที่ซับซ้อนเรียบง่าย แทนที่ความสับสนด้วยความมั่นใจ</span>
+        </p>
+        <div class="about-pillars">
+          <div class="pillar"><div class="pillar-num">13+</div><div class="pillar-txt"><span class="en">Years in Asia</span><span class="th">ปีในเอเชีย</span></div></div>
+          <div class="pillar"><div class="pillar-num">2020</div><div class="pillar-txt"><span class="en">In Crypto Since</span><span class="th">ในคริปโตตั้งแต่</span></div></div>
+          <div class="pillar"><div class="pillar-num">100s</div><div class="pillar-txt"><span class="en">Companies Guided</span><span class="th">บริษัทที่ได้รับคำแนะนำ</span></div></div>
+          <div class="pillar"><div class="pillar-num">BKK</div><div class="pillar-txt"><span class="en">Based in Bangkok</span><span class="th">ประจำกรุงเทพฯ</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider-light"></div>
+
+<!-- CONTACT — light -->
+<section id="contact">
+  <div class="section-wrap">
+    <div class="contact-grid">
+      <div class="contact-left reveal">
+        <div class="section-label"><span class="en">04 — Contact</span><span class="th">04 — ติดต่อ</span></div>
+        <h3>
+          <span class="en">Let's start with<br>a simple conversation.</span>
+          <span class="th">เริ่มต้นด้วย<br>การสนทนาง่ายๆ</span>
+        </h3>
+        <p>
+          <span class="en">No jargon, no pressure. Whether you have a question, want to book a session, or simply want to understand what would work for you — reach out. Every enquiry is handled personally by Gili.</span>
+          <span class="th">ไม่มีศัพท์เทคนิค ไม่มีแรงกดดัน ไม่ว่าคุณมีคำถาม ต้องการจองเซสชัน หรือเพียงต้องการเข้าใจว่าอะไรเหมาะกับคุณ — ติดต่อได้เลย ทุกคำถามได้รับการดูแลโดยกิลีเป็นการส่วนตัว</span>
+        </p>
+        <div class="contact-details">
+          <div class="c-item">
+            <span class="c-label">Email</span>
+            <span class="c-val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="83e4eaefeac3e7e2aee1e8e8ade0ecee">[email&#160;protected]</a></span>
+          </div>
+          <div class="c-item">
+            <span class="c-label"><span class="en">Location</span><span class="th">ที่ตั้ง</span></span>
+            <span class="c-val">Bangkok, Thailand</span>
+          </div>
+          <div class="c-item">
+            <span class="c-label"><span class="en">Sessions</span><span class="th">เซสชัน</span></span>
+            <span class="c-val"><span class="en">Online & In-Person · English & Thai</span><span class="th">ออนไลน์และพบตัว · ภาษาอังกฤษและไทย</span></span>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form reveal d2" action="https://formspree.io/f/mgolywab" method="POST">
+        <div class="fg">
+          <label><span class="en">Full Name</span><span class="th">ชื่อ-นามสกุล</span></label>
+          <input type="text" name="name" placeholder="Your name" required>
+        </div>
+        <div class="fg">
+          <label>Email</label>
+          <input type="email" name="email" placeholder="your@email.com" required>
+        </div>
+        <div class="fg">
+          <label><span class="en">Phone / WhatsApp</span><span class="th">เบอร์โทร / WhatsApp</span></label>
+          <input type="tel" name="phone" placeholder="+66 or international">
+        </div>
+        <div class="fg">
+          <label><span class="en">I'm interested in</span><span class="th">ฉันสนใจ</span></label>
+          <select name="service">
+            <option value="">— <span class="en">Choose a service or just send a message</span><span class="th">เลือกบริการหรือส่งข้อความ</span> —</option>
+            <option value="clarity">Clarity Session — ฿9,900</option>
+            <option value="program">Structured Program — ฿30,000–฿50,000</option>
+            <option value="business">Business Program — from ฿50,000</option>
+            <option value="workshop">Corporate Workshop — from ฿90,000</option>
+            <option value="question"><span class="en">Just a question</span><span class="th">แค่มีคำถาม</span></option>
+          </select>
+        </div>
+        <div class="fg">
+          <label><span class="en">Your Message</span><span class="th">ข้อความของคุณ</span></label>
+          <textarea name="message" placeholder="Tell us about your situation or ask anything — no question is too basic." required></textarea>
+        </div>
+        <button type="submit" class="btn-gold" style="width:100%;padding:14px;font-size:11px;">
+          <span class="en">Send Message →</span><span class="th">ส่งข้อความ →</span>
+        </button>
+        <p class="form-note">
+          <span class="en">By submitting you confirm you understand DA-BKK provides structured advisory frameworks, not regulated financial advice.</span>
+          <span class="th">การส่งข้อความยืนยันว่าคุณเข้าใจว่า DA-BKK ให้กรอบที่ปรึกษาเชิงโครงสร้าง ไม่ใช่คำแนะนำทางการเงินที่อยู่ภายใต้กฎระเบียบ</span>
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER — dark -->
+<footer>
+  <a href="#home" class="logo">DA<span>–</span>BKK</a>
+  <div class="footer-copy">
+    © 2026 DA-BKK · Gili Tuhsher · Bangkok, Thailand<br>
+    <span style="font-size:9px;opacity:0.6;"><span class="en">Structured digital asset education. Not financial advice.</span><span class="th">ความรู้สินทรัพย์ดิจิทัลเชิงโครงสร้าง ไม่ใช่คำแนะนำทางการเงิน</span></span>
+  </div>
+  <div class="footer-links">
+    <a href="#services"><span class="en">Services</span><span class="th">บริการ</span></a>
+    <a href="#about"><span class="en">About</span><span class="th">เกี่ยวกับ</span></a>
+    <a href="#contact"><span class="en">Contact</span><span class="th">ติดต่อ</span></a>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+function setLang(lang,btn){
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.body.classList.toggle('thai',lang==='th');
+}
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+function closeMobile(){document.getElementById('mobileMenu').classList.remove('open');}
+const obs=new IntersectionObserver(ent
