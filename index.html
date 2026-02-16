@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K74J3SVTXK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-K74J3SVTXK');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="DA-BKK — Structured digital asset advisory in Bangkok, Thailand. Bitcoin education, crypto clarity, blockchain strategy for individuals and businesses. Not financial advice. | ที่ปรึกษาสินทรัพย์ดิจิทัล กรุงเทพ ไทย">
@@ -194,6 +202,7 @@ body.thai .th-b{display:block;}body.thai .en-b{display:none;}
     <li><a href="#services"><span class="en">Services</span><span class="th">บริการ</span></a></li>
     <li><a href="#about"><span class="en">About</span><span class="th">เกี่ยวกับ</span></a></li>
     <li><a href="#contact"><span class="en">Contact</span><span class="th">ติดต่อ</span></a></li>
+    <li><a href="faq.html"><span class="en">FAQ</span><span class="th">คำถาม</span></a></li>
   </ul>
   <div class="nav-right">
     <div class="lang-toggle">
@@ -209,6 +218,7 @@ body.thai .th-b{display:block;}body.thai .en-b{display:none;}
   <a href="#services" onclick="closeMobile()"><span class="en">Services</span><span class="th">บริการ</span></a>
   <a href="#about" onclick="closeMobile()"><span class="en">About</span><span class="th">เกี่ยวกับ</span></a>
   <a href="#contact" onclick="closeMobile()"><span class="en">Contact</span><span class="th">ติดต่อ</span></a>
+  <a href="faq.html" onclick="closeMobile()"><span class="en">FAQ</span><span class="th">คำถาม</span></a>
 </div>
 
 <!-- HERO — dark -->
@@ -484,7 +494,7 @@ body.thai .th-b{display:block;}body.thai .en-b{display:none;}
         <div class="contact-details">
           <div class="c-item">
             <span class="c-label">Email</span>
-            <span class="c-val">gili@da-bkk.com</span>
+            <span class="c-val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="83e4eaefeac3e7e2aee1e8e8ade0ecee">[email&#160;protected]</a></span>
           </div>
           <div class="c-item">
             <span class="c-label"><span class="en">Location</span><span class="th">ที่ตั้ง</span></span>
@@ -496,18 +506,18 @@ body.thai .th-b{display:block;}body.thai .en-b{display:none;}
           </div>
         </div>
       </div>
-      <div class="contact-form reveal d2">
+      <form class="contact-form reveal d2" action="https://formspree.io/f/mgolywab" method="POST">
         <div class="fg">
           <label><span class="en">Full Name</span><span class="th">ชื่อ-นามสกุล</span></label>
-          <input type="text" placeholder="Your name">
+          <input type="text" name="name" placeholder="Your name" required>
         </div>
         <div class="fg">
           <label>Email</label>
-          <input type="email" placeholder="your@email.com">
+          <input type="email" name="email" placeholder="your@email.com" required>
         </div>
         <div class="fg">
           <label><span class="en">I'm interested in</span><span class="th">ฉันสนใจ</span></label>
-          <select>
+          <select name="service">
             <option value="">— <span class="en">Choose a service or just send a message</span><span class="th">เลือกบริการหรือส่งข้อความ</span> —</option>
             <option value="clarity">Clarity Session — ฿9,900</option>
             <option value="program">Structured Program — ฿30,000–฿50,000</option>
@@ -518,16 +528,16 @@ body.thai .th-b{display:block;}body.thai .en-b{display:none;}
         </div>
         <div class="fg">
           <label><span class="en">Your Message</span><span class="th">ข้อความของคุณ</span></label>
-          <textarea placeholder="Tell us about your situation or ask anything — no question is too basic."></textarea>
+          <textarea name="message" placeholder="Tell us about your situation or ask anything — no question is too basic." required></textarea>
         </div>
-        <button class="btn-gold" style="width:100%;padding:14px;font-size:11px;">
+        <button type="submit" class="btn-gold" style="width:100%;padding:14px;font-size:11px;">
           <span class="en">Send Message →</span><span class="th">ส่งข้อความ →</span>
         </button>
         <p class="form-note">
           <span class="en">By submitting you confirm you understand DA-BKK provides structured advisory frameworks, not regulated financial advice.</span>
           <span class="th">การส่งข้อความยืนยันว่าคุณเข้าใจว่า DA-BKK ให้กรอบที่ปรึกษาเชิงโครงสร้าง ไม่ใช่คำแนะนำทางการเงินที่อยู่ภายใต้กฎระเบียบ</span>
         </p>
-      </div>
+      </form>
     </div>
   </div>
 </section>
@@ -546,7 +556,7 @@ body.thai .th-b{display:block;}body.thai .en-b{display:none;}
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 function setLang(lang,btn){
   document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
@@ -554,10 +564,4 @@ function setLang(lang,btn){
 }
 function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
 function closeMobile(){document.getElementById('mobileMenu').classList.remove('open');}
-const obs=new IntersectionObserver(entries=>{
-  entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('visible'),i*80);});
-},{threshold:0.08});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-</script>
-</body>
-</html>
+const obs=new IntersectionObserver(ent
