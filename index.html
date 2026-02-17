@@ -125,7 +125,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 40px;display:fl
 #about{background:var(--white);}
 .about-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:72px;align-items:start;}
 .about-img-wrap{position:relative;}
-.about-img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center top;display:block;}
+.about-img{width:100%;aspect-ratio:2/3;object-fit:cover;object-position:center top;display:block;}
 .about-img-caption{padding:12px 16px;background:var(--light);border:1px solid var(--light-border);border-top:none;font-size:10px;letter-spacing:0.15em;color:var(--text-light-muted);text-transform:uppercase;}
 .about-content .section-title{margin-bottom:8px;}
 .about-name-sub{font-size:12px;color:var(--gold);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:26px;}
@@ -234,6 +234,21 @@ body.thai div > .th { display: inline !important; }
 </style>
 <!-- disable-email-obfuscation -->
 <script>
+function bookPkg(val) {
+  var sel = document.querySelector('select[name="service"]');
+  if(sel) {
+    sel.value = val;
+    sel.dispatchEvent(new Event('change'));
+  }
+  var contact = document.getElementById('contact');
+  if(contact) {
+    contact.scrollIntoView({behavior:'smooth'});
+    setTimeout(function(){
+      var msg = document.querySelector('textarea[name="message"]');
+      if(msg && !msg.value) msg.focus();
+    }, 600);
+  }
+}
 function togglePkg(el) {
   var isOpen = el.classList.contains('open');
   document.querySelectorAll('.pkg.open').forEach(function(p){ p.classList.remove('open'); });
@@ -290,7 +305,6 @@ function togglePkg(el) {
     <span class="th">DA-BKK ให้ความรู้เชิงโครงสร้างและกรอบกลยุทธ์ เราไม่ใช่ที่ปรึกษาทางการเงินที่ได้รับใบอนุญาต</span>
   </p>
   <div class="hero-cta">
-    <a href="#contact" class="btn-gold"><span class="en">Book a Session</span><span class="th">จองเซสชัน</span></a>
     <a href="#services" class="btn-outline-light"><span class="en">Explore Services →</span><span class="th">ดูบริการ →</span></a>
   </div>
 
@@ -415,6 +429,7 @@ function togglePkg(el) {
           <div class="pkg-bottom">
             <div class="pkg-price">฿9,900</div>
             <div class="pkg-format"><span class="en">1 session · Online or In-Person Bangkok · English or Thai</span><span class="th">1 เซสชัน · ออนไลน์หรือพบตัวที่กรุงเทพฯ · ภาษาอังกฤษหรือไทย</span></div>
+            <button onclick="event.stopPropagation();bookPkg('clarity')" class="btn-gold" style="margin-top:16px;width:100%;padding:11px;font-size:11px;border:none;cursor:pointer;"><span class="en">Book this Session →</span><span class="th">จองเซสชันนี้ →</span></button>
           </div>
         </div>
       </div>
@@ -448,6 +463,7 @@ function togglePkg(el) {
           <div class="pkg-bottom">
             <div class="pkg-price">฿30,000 – ฿50,000</div>
             <div class="pkg-format"><span class="en">3–4 sessions over 4–6 weeks · Online or In-Person · English or Thai</span><span class="th">3–4 เซสชันใน 4–6 สัปดาห์ · ออนไลน์หรือพบตัว · ภาษาอังกฤษหรือไทย</span></div>
+            <button onclick="event.stopPropagation();bookPkg('program')" class="btn-gold" style="margin-top:16px;width:100%;padding:11px;font-size:11px;border:none;cursor:pointer;"><span class="en">Book this Program →</span><span class="th">จองโปรแกรมนี้ →</span></button>
           </div>
         </div>
       </div>
@@ -480,6 +496,7 @@ function togglePkg(el) {
           <div class="pkg-bottom">
             <div class="pkg-price"><span class="en">Starting from ฿50,000</span><span class="th">เริ่มต้นจาก ฿50,000</span></div>
             <div class="pkg-format"><span class="en">Tailored scope & sessions · Online or In-Person · English or Thai</span><span class="th">ขอบเขตและเซสชันที่ปรับได้ · ออนไลน์หรือพบตัว · ภาษาอังกฤษหรือไทย</span></div>
+            <button onclick="event.stopPropagation();bookPkg('business')" class="btn-gold" style="margin-top:16px;width:100%;padding:11px;font-size:11px;border:none;cursor:pointer;"><span class="en">Enquire about this Program →</span><span class="th">สอบถามโปรแกรมนี้ →</span></button>
           </div>
         </div>
       </div>
@@ -512,6 +529,7 @@ function togglePkg(el) {
           <div class="pkg-bottom">
             <div class="pkg-price"><span class="en">Starting from ฿90,000</span><span class="th">เริ่มต้นจาก ฿90,000</span></div>
             <div class="pkg-format"><span class="en">Full-day or multi-session · On-site preferred · English or Thai</span><span class="th">เต็มวันหรือหลายเซสชัน · แนะนำพบตัว · ภาษาอังกฤษหรือไทย</span></div>
+            <button onclick="event.stopPropagation();bookPkg('workshop')" class="btn-gold" style="margin-top:16px;width:100%;padding:11px;font-size:11px;border:none;cursor:pointer;"><span class="en">Enquire about this Workshop →</span><span class="th">สอบถามเวิร์กช็อปนี้ →</span></button>
           </div>
         </div>
       </div>
