@@ -168,10 +168,21 @@ footer{background:var(--dark-2);padding:28px 40px;display:flex;justify-content:s
 .d1{transition-delay:0.08s;}.d2{transition-delay:0.16s;}.d3{transition-delay:0.24s;}.d4{transition-delay:0.32s;}
 
 /* LANG */
-.th{display:none;}.en{display:inline;}
-body.thai .th{display:inline;}body.thai .en{display:none;}
-.th-b{display:none;}.en-b{display:block;}
-body.thai .th-b{display:block;}body.thai .en-b{display:none;}
+.th { display: none !important; }
+.en { display: inline !important; }
+body.thai .th { display: inline !important; }
+body.thai .en { display: none !important; }
+.th-b { display: none !important; }
+.en-b { display: block !important; }
+body.thai .th-b { display: block !important; }
+body.thai .en-b { display: none !important; }
+/* Block-level Thai elements */
+body.thai p > .th,
+body.thai h1 > .th,
+body.thai h2 > .th,
+body.thai h3 > .th,
+body.thai li > .th,
+body.thai div > .th { display: inline !important; }
 
 /* MOBILE */
 @media(max-width:768px){
@@ -192,6 +203,17 @@ body.thai .th-b{display:block;}body.thai .en-b{display:none;}
   .world-card{border:none;border-bottom:1px solid var(--light-border);}
 }
 
+
+/* EXPANDABLE PACKAGES */
+.pkg { cursor:pointer; }
+.pkg-body { display:none; }
+.pkg.open .pkg-body { display:block; }
+.pkg-header { display:flex; justify-content:space-between; align-items:flex-start; gap:12px; }
+.pkg-toggle { color:var(--gold); font-size:20px; font-family:"DM Mono",monospace; flex-shrink:0; margin-top:4px; transition:transform 0.3s; }
+.pkg.open .pkg-toggle { transform:rotate(45deg); }
+.pkg-header:hover .pkg-name { color:var(--gold); }
+.pkg-name { transition:color 0.3s; }
+
 /* WHATSAPP */
 .wa-btn{
   position:fixed; bottom:28px; right:28px; z-index:999;
@@ -211,6 +233,13 @@ body.thai .th-b{display:block;}body.thai .en-b{display:none;}
 .wa-btn:hover .wa-tooltip{opacity:1;}
 </style>
 <!-- disable-email-obfuscation -->
+<script>
+function togglePkg(el) {
+  var isOpen = el.classList.contains('open');
+  document.querySelectorAll('.pkg.open').forEach(function(p){ p.classList.remove('open'); });
+  if (!isOpen) el.classList.add('open');
+}
+</script>
 </head>
 <body>
 
@@ -264,6 +293,28 @@ body.thai .th-b{display:block;}body.thai .en-b{display:none;}
     <a href="#contact" class="btn-gold"><span class="en">Book a Session</span><span class="th">จองเซสชัน</span></a>
     <a href="#services" class="btn-outline-light"><span class="en">Explore Services →</span><span class="th">ดูบริการ →</span></a>
   </div>
+
+  <div style="position:relative;margin-top:40px;max-width:480px;background:rgba(200,168,75,0.08);border:1px solid rgba(200,168,75,0.25);padding:20px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;">
+    <div>
+      <div style="font-size:10px;letter-spacing:0.25em;color:var(--gold);text-transform:uppercase;margin-bottom:6px;">
+        <span class="en">Start here · Most popular</span>
+        <span class="th">เริ่มที่นี่ · ยอดนิยม</span>
+      </div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--text-dark);">
+        <span class="en">Clarity Session — ฿9,900</span>
+        <span class="th">เซสชันความชัดเจน — ฿9,900</span>
+      </div>
+      <div style="font-size:11px;color:var(--text-dark-muted);margin-top:4px;">
+        <span class="en">One session. Walk away with complete clarity.</span>
+        <span class="th">หนึ่งเซสชัน ออกไปพร้อมความเข้าใจที่สมบูรณ์</span>
+      </div>
+    </div>
+    <a href="#contact" class="btn-gold" style="white-space:nowrap;font-size:10px;padding:10px 20px;">
+      <span class="en">Book Now →</span>
+      <span class="th">จองเลย →</span>
+    </a>
+  </div>
+
 </section>
 
 <!-- TRUST BAR -->
@@ -335,110 +386,133 @@ body.thai .th-b{display:block;}body.thai .en-b{display:none;}
 
     <div class="packages-grid">
 
-      <!-- CLARITY SESSION -->
-      <div class="pkg reveal d1">
-        <div class="pkg-audience"><span class="en">Individual · Beginner</span><span class="th">บุคคล · ผู้เริ่มต้น</span></div>
-        <div class="pkg-name"><span class="en">Clarity Session</span><span class="th">เซสชันความชัดเจน</span></div>
-        <div class="pkg-tagline"><span class="en">"I've heard about Bitcoin — but I want to actually understand it."</span><span class="th">"ได้ยินเรื่องบิทคอยน์ — แต่อยากเข้าใจจริงๆ"</span></div>
-        <div class="pkg-who">
-          <span class="en">You've heard the names — Bitcoin, Ethereum, USDT. Maybe you've seen others buying it. Maybe someone has approached you with an opportunity and you weren't sure what to make of it. This session gives you a clear, honest, and complete picture — so you feel informed, safe, and confident.</span>
-          <span class="th">คุณได้ยินชื่อ — บิทคอยน์ อีเธอเรียม USDT บางทีเห็นคนอื่นซื้อ บางทีมีคนมาเสนอโอกาสและคุณไม่แน่ใจ เซสชันนี้ให้ภาพที่ชัดเจน ซื่อสัตย์ และครบถ้วน — เพื่อให้คุณรู้สึกมีความรู้ ปลอดภัย และมั่นใจ</span>
+      <div class="pkg" onclick="togglePkg(this)">
+        <div class="pkg-header">
+          <div>
+            <div class="pkg-audience"><span class="en">Individual · Beginner</span><span class="th">บุคคล · ผู้เริ่มต้น</span></div>
+            <div class="pkg-name"><span class="en">Clarity Session</span><span class="th">เซสชันความชัดเจน</span></div>
+            <div class="pkg-tagline"><span class="en">"I've heard about Bitcoin — but I want to actually understand it."</span><span class="th">"ได้ยินเรื่องบิทคอยน์ — แต่อยากเข้าใจจริงๆ"</span></div>
+          </div>
+          <span class="pkg-toggle">+</span>
         </div>
-        <div class="pkg-topics">
-          <div class="pkg-topics-label"><span class="en">What we cover</span><span class="th">สิ่งที่เราครอบคลุม</span></div>
-          <ul>
-            <li><span class="en">What Bitcoin, Ethereum & stablecoins actually are</span><span class="th">บิทคอยน์ อีเธอเรียม และ Stablecoins คืออะไร</span></li>
-            <li><span class="en">How blockchain networks work — simply explained</span><span class="th">เครือข่ายบล็อกเชนทำงานอย่างไร — อธิบายให้เข้าใจง่าย</span></li>
-            <li><span class="en">Wallets — how to open, use & protect yours</span><span class="th">กระเป๋าเงิน — วิธีเปิด ใช้ และป้องกัน</span></li>
-            <li><span class="en">Secret phrases — what they mean & how to keep them safe</span><span class="th">ซีดฟราส — ความหมายและวิธีเก็บให้ปลอดภัย</span></li>
-            <li><span class="en">Exchanges — which to trust and how to use them</span><span class="th">Exchange — อันไหนน่าเชื่อถือและใช้อย่างไร</span></li>
-            <li><span class="en">How to recognise scams, fake projects & manipulation</span><span class="th">วิธีจดจำการหลอกลวง โครงการปลอม และการบิดเบือน</span></li>
-            <li><span class="en">Trusted sources — what to read, watch & follow</span><span class="th">แหล่งข้อมูลที่เชื่อถือได้ — อะไรควรอ่าน ดู และติดตาม</span></li>
-          </ul>
-        </div>
-        <div class="pkg-bottom">
-          <div class="pkg-price">฿9,900</div>
-          <div class="pkg-format"><span class="en">1 session · Online or In-Person Bangkok · English or Thai</span><span class="th">1 เซสชัน · ออนไลน์หรือพบตัวที่กรุงเทพฯ · ภาษาอังกฤษหรือไทย</span></div>
-        </div>
-      </div>
-
-      <!-- STRUCTURED PROGRAM -->
-      <div class="pkg reveal d2">
-        <div class="pkg-audience"><span class="en">Individual · Growing Knowledge</span><span class="th">บุคคล · ขยายความรู้</span></div>
-        <div class="pkg-name"><span class="en">Structured Program</span><span class="th">โปรแกรมเชิงโครงสร้าง</span></div>
-        <div class="pkg-tagline"><span class="en">"I have some crypto — I want to really understand what I'm doing."</span><span class="th">"มีคริปโตอยู่บ้าง — อยากเข้าใจอย่างแท้จริงว่ากำลังทำอะไร"</span></div>
-        <div class="pkg-who">
-          <span class="en">You've taken your first steps. You hold some crypto, maybe use an exchange. But you want more than basics — you want to truly understand the space, make confident decisions, and know exactly how to protect what you have.</span>
-          <span class="th">คุณก้าวแรกไปแล้ว ถือคริปโตบ้าง บางทีใช้ exchange แต่คุณต้องการมากกว่าพื้นฐาน — อยากเข้าใจพื้นที่นี้อย่างแท้จริง ตัดสินใจได้อย่างมั่นใจ และรู้วิธีปกป้องสิ่งที่มี</span>
-        </div>
-        <div class="pkg-topics">
-          <div class="pkg-topics-label"><span class="en">What we cover</span><span class="th">สิ่งที่เราครอบคลุม</span></div>
-          <ul>
-            <li><span class="en">Deep dive: Bitcoin, Ethereum, Layer 2s, DeFi basics</span><span class="th">เจาะลึก: บิทคอยน์ อีเธอเรียม Layer 2 และ DeFi เบื้องต้น</span></li>
-            <li><span class="en">Market cycles — history, patterns & what they mean for you</span><span class="th">วัฏจักรตลาด — ประวัติ รูปแบบ และความหมายสำหรับคุณ</span></li>
-            <li><span class="en">Tokenomics — how to evaluate a project properly</span><span class="th">Tokenomics — วิธีประเมินโครงการอย่างถูกต้อง</span></li>
-            <li><span class="en">Portfolio structure & risk awareness — frameworks, not advice</span><span class="th">โครงสร้างพอร์ตและการตระหนักถึงความเสี่ยง — กรอบ ไม่ใช่คำแนะนำ</span></li>
-            <li><span class="en">Advanced wallet security & cold storage</span><span class="th">ความปลอดภัยกระเป๋าเงินขั้นสูงและ cold storage</span></li>
-            <li><span class="en">Stablecoins — practical uses, risks & what to avoid</span><span class="th">Stablecoins — การใช้งานจริง ความเสี่ยง และสิ่งที่ควรหลีกเลี่ยง</span></li>
-            <li><span class="en">Building your own ongoing education framework</span><span class="th">การสร้างกรอบการศึกษาด้วยตนเองอย่างต่อเนื่อง</span></li>
-          </ul>
-        </div>
-        <div class="pkg-bottom">
-          <div class="pkg-price">฿30,000 – ฿50,000</div>
-          <div class="pkg-format"><span class="en">3–4 sessions over 4–6 weeks · Online or In-Person · English or Thai</span><span class="th">3–4 เซสชันใน 4–6 สัปดาห์ · ออนไลน์หรือพบตัว · ภาษาอังกฤษหรือไทย</span></div>
+        <div class="pkg-body">
+          <div class="pkg-who">
+            <span class="en">You've heard the names — Bitcoin, Ethereum, USDT. Maybe you've seen others buying it. Maybe someone approached you with an opportunity and you weren't sure. This session gives you a clear, honest, and complete picture — so you feel informed, safe, and confident.</span>
+            <span class="th">คุณได้ยินชื่อ — บิทคอยน์ อีเธอเรียม USDT บางทีเห็นคนอื่นซื้อ บางทีมีคนมาเสนอโอกาสและคุณไม่แน่ใจ เซสชันนี้ให้ภาพที่ชัดเจน ซื่อสัตย์ และครบถ้วน — เพื่อให้คุณรู้สึกมีความรู้ ปลอดภัย และมั่นใจ</span>
+          </div>
+          <div class="pkg-topics">
+            <div class="pkg-topics-label"><span class="en">What we cover</span><span class="th">สิ่งที่เราครอบคลุม</span></div>
+            <ul>
+              <li><span class="en">What Bitcoin, Ethereum & stablecoins actually are</span><span class="th">บิทคอยน์ อีเธอเรียม และ Stablecoins คืออะไร</span></li>
+              <li><span class="en">How blockchain networks work — simply explained</span><span class="th">เครือข่ายบล็อกเชนทำงานอย่างไร — อธิบายให้เข้าใจง่าย</span></li>
+              <li><span class="en">Wallets — how to open, use & protect yours</span><span class="th">กระเป๋าเงิน — วิธีเปิด ใช้ และป้องกัน</span></li>
+              <li><span class="en">Secret phrases — what they mean & how to keep them safe</span><span class="th">ซีดฟราส — ความหมายและวิธีเก็บให้ปลอดภัย</span></li>
+              <li><span class="en">Exchanges — which to trust and how to use them</span><span class="th">Exchange — อันไหนน่าเชื่อถือและใช้อย่างไร</span></li>
+              <li><span class="en">How to recognise scams, fake projects & manipulation</span><span class="th">วิธีจดจำการหลอกลวง โครงการปลอม และการบิดเบือน</span></li>
+              <li><span class="en">Trusted sources — what to read, watch & follow</span><span class="th">แหล่งข้อมูลที่เชื่อถือได้ — อะไรควรอ่าน ดู และติดตาม</span></li>
+            </ul>
+          </div>
+          <div class="pkg-bottom">
+            <div class="pkg-price">฿9,900</div>
+            <div class="pkg-format"><span class="en">1 session · Online or In-Person Bangkok · English or Thai</span><span class="th">1 เซสชัน · ออนไลน์หรือพบตัวที่กรุงเทพฯ · ภาษาอังกฤษหรือไทย</span></div>
+          </div>
         </div>
       </div>
 
-      <!-- BUSINESS PROGRAM -->
-      <div class="pkg reveal d3">
-        <div class="pkg-audience"><span class="en">Business · SME & Entrepreneurs</span><span class="th">ธุรกิจ · SME และผู้ประกอบการ</span></div>
-        <div class="pkg-name"><span class="en">Business Program</span><span class="th">โปรแกรมธุรกิจ</span></div>
-        <div class="pkg-tagline"><span class="en">"I want my business to understand and benefit from this space."</span><span class="th">"อยากให้ธุรกิจเข้าใจและได้รับประโยชน์จากพื้นที่นี้"</span></div>
-        <div class="pkg-who">
-          <span class="en">Your business is navigating a world where digital assets, blockchain infrastructure, and tokenization are becoming real considerations. This program gives you and your team a structured foundation — tailored to your industry, your size, and your questions.</span>
-          <span class="th">ธุรกิจของคุณกำลังดำเนินการในโลกที่สินทรัพย์ดิจิทัล โครงสร้างพื้นฐานบล็อกเชน และการ tokenization กลายเป็นสิ่งที่ต้องพิจารณาจริงๆ โปรแกรมนี้ให้รากฐานที่มีโครงสร้างสำหรับคุณและทีม</span>
+      <div class="pkg" onclick="togglePkg(this)">
+        <div class="pkg-header">
+          <div>
+            <div class="pkg-audience"><span class="en">Individual · Growing Knowledge</span><span class="th">บุคคล · ขยายความรู้</span></div>
+            <div class="pkg-name"><span class="en">Structured Program</span><span class="th">โปรแกรมเชิงโครงสร้าง</span></div>
+            <div class="pkg-tagline"><span class="en">"I have some crypto — I want to really understand what I'm doing."</span><span class="th">"มีคริปโตอยู่บ้าง — อยากเข้าใจอย่างแท้จริงว่ากำลังทำอะไร"</span></div>
+          </div>
+          <span class="pkg-toggle">+</span>
         </div>
-        <div class="pkg-topics">
-          <div class="pkg-topics-label"><span class="en">What we cover</span><span class="th">สิ่งที่เราครอบคลุม</span></div>
-          <ul>
-            <li><span class="en">Digital asset risk mapping — where is your exposure</span><span class="th">การทำแผนที่ความเสี่ยงสินทรัพย์ดิจิทัล</span></li>
-            <li><span class="en">Blockchain for business — transparency, security & speed</span><span class="th">บล็อกเชนสำหรับธุรกิจ — ความโปร่งใส ความปลอดภัย ความเร็ว</span></li>
-            <li><span class="en">Stablecoin & treasury strategy fundamentals</span><span class="th">พื้นฐานกลยุทธ์ Stablecoin และคลังสำรอง</span></li>
-            <li><span class="en">Token, platform & network opportunities for your business</span><span class="th">โอกาสโทเคน แพลตฟอร์ม และเครือข่ายสำหรับธุรกิจ</span></li>
-            <li><span class="en">Internal digital asset policy & operational guidance</span><span class="th">นโยบายสินทรัพย์ดิจิทัลภายในและคำแนะนำการดำเนินงาน</span></li>
-            <li><span class="en">Connections to developers, legal & financial specialists</span><span class="th">การเชื่อมต่อกับนักพัฒนา ที่ปรึกษากฎหมาย และผู้เชี่ยวชาญ</span></li>
-            <li><span class="en">Ongoing availability for questions & strategic decisions</span><span class="th">ความพร้อมอย่างต่อเนื่องสำหรับคำถามและการตัดสินใจเชิงกลยุทธ์</span></li>
-          </ul>
-        </div>
-        <div class="pkg-bottom">
-          <div class="pkg-price"><span class="en">Starting from ฿50,000</span><span class="th">เริ่มต้นจาก ฿50,000</span></div>
-          <div class="pkg-format"><span class="en">Tailored scope & sessions · Online or In-Person · English or Thai</span><span class="th">ขอบเขตและเซสชันที่ปรับได้ · ออนไลน์หรือพบตัว · ภาษาอังกฤษหรือไทย</span></div>
+        <div class="pkg-body">
+          <div class="pkg-who">
+            <span class="en">You've taken your first steps. You hold some crypto, maybe use an exchange. But you want more than basics — you want to truly understand the space, make confident decisions, and know exactly how to protect what you have.</span>
+            <span class="th">คุณก้าวแรกไปแล้ว ถือคริปโตบ้าง บางทีใช้ exchange แต่คุณต้องการมากกว่าพื้นฐาน — อยากเข้าใจพื้นที่นี้อย่างแท้จริง ตัดสินใจได้อย่างมั่นใจ และรู้วิธีปกป้องสิ่งที่มี</span>
+          </div>
+          <div class="pkg-topics">
+            <div class="pkg-topics-label"><span class="en">What we cover</span><span class="th">สิ่งที่เราครอบคลุม</span></div>
+            <ul>
+              <li><span class="en">Deep dive: Bitcoin, Ethereum, Layer 2s, DeFi basics</span><span class="th">เจาะลึก: บิทคอยน์ อีเธอเรียม Layer 2 และ DeFi เบื้องต้น</span></li>
+              <li><span class="en">Market cycles — history, patterns & what they mean for you</span><span class="th">วัฏจักรตลาด — ประวัติ รูปแบบ และความหมายสำหรับคุณ</span></li>
+              <li><span class="en">Tokenomics — how to evaluate a project properly</span><span class="th">Tokenomics — วิธีประเมินโครงการอย่างถูกต้อง</span></li>
+              <li><span class="en">Portfolio structure & risk awareness — frameworks, not advice</span><span class="th">โครงสร้างพอร์ตและการตระหนักถึงความเสี่ยง</span></li>
+              <li><span class="en">Advanced wallet security & cold storage</span><span class="th">ความปลอดภัยกระเป๋าเงินขั้นสูงและ cold storage</span></li>
+              <li><span class="en">Stablecoins — practical uses, risks & what to avoid</span><span class="th">Stablecoins — การใช้งานจริง ความเสี่ยง และสิ่งที่ควรหลีกเลี่ยง</span></li>
+              <li><span class="en">Building your own ongoing education framework</span><span class="th">การสร้างกรอบการศึกษาด้วยตนเองอย่างต่อเนื่อง</span></li>
+            </ul>
+          </div>
+          <div class="pkg-bottom">
+            <div class="pkg-price">฿30,000 – ฿50,000</div>
+            <div class="pkg-format"><span class="en">3–4 sessions over 4–6 weeks · Online or In-Person · English or Thai</span><span class="th">3–4 เซสชันใน 4–6 สัปดาห์ · ออนไลน์หรือพบตัว · ภาษาอังกฤษหรือไทย</span></div>
+          </div>
         </div>
       </div>
 
-      <!-- CORPORATE WORKSHOP -->
-      <div class="pkg reveal d4">
-        <div class="pkg-audience"><span class="en">Corporate · Leadership Teams</span><span class="th">องค์กร · ทีมผู้บริหาร</span></div>
-        <div class="pkg-name"><span class="en">Corporate Workshop</span><span class="th">เวิร์กช็อปองค์กร</span></div>
-        <div class="pkg-tagline"><span class="en">"Our leadership team needs strategic clarity on digital assets."</span><span class="th">"ทีมผู้บริหารต้องการความชัดเจนเชิงกลยุทธ์เกี่ยวกับสินทรัพย์ดิจิทัล"</span></div>
-        <div class="pkg-who">
-          <span class="en">A professional, structured workshop for corporate leadership teams. Designed to equip decision-makers with the knowledge, frameworks, and confidence to understand and act on digital asset opportunities and risks at an organisational level.</span>
-          <span class="th">เวิร์กช็อปที่มีความเป็นมืออาชีพและมีโครงสร้างสำหรับทีมผู้บริหารองค์กร ออกแบบเพื่อให้ผู้ตัดสินใจมีความรู้ กรอบ และความมั่นใจในการเข้าใจและดำเนินการเกี่ยวกับโอกาสและความเสี่ยงของสินทรัพย์ดิจิทัล</span>
+      <div class="pkg" onclick="togglePkg(this)">
+        <div class="pkg-header">
+          <div>
+            <div class="pkg-audience"><span class="en">Business · SME & Entrepreneurs</span><span class="th">ธุรกิจ · SME และผู้ประกอบการ</span></div>
+            <div class="pkg-name"><span class="en">Business Program</span><span class="th">โปรแกรมธุรกิจ</span></div>
+            <div class="pkg-tagline"><span class="en">"I want my business to understand and benefit from this space."</span><span class="th">"อยากให้ธุรกิจเข้าใจและได้รับประโยชน์จากพื้นที่นี้"</span></div>
+          </div>
+          <span class="pkg-toggle">+</span>
         </div>
-        <div class="pkg-topics">
-          <div class="pkg-topics-label"><span class="en">What we cover</span><span class="th">สิ่งที่เราครอบคลุม</span></div>
-          <ul>
-            <li><span class="en">Blockchain infrastructure — strategic overview for leaders</span><span class="th">โครงสร้างพื้นฐานบล็อกเชน — ภาพรวมเชิงกลยุทธ์สำหรับผู้นำ</span></li>
-            <li><span class="en">Digital asset risk frameworks & scenario planning</span><span class="th">กรอบความเสี่ยงสินทรัพย์ดิจิทัลและการวางแผนสถานการณ์</span></li>
-            <li><span class="en">Token launches, platforms & market entry strategy</span><span class="th">การเปิดตัวโทเคน แพลตฟอร์ม และกลยุทธ์การเข้าสู่ตลาด</span></li>
-            <li><span class="en">Regulatory landscape — Thailand & global</span><span class="th">กฎระเบียบ — ไทยและระดับโลก</span></li>
-            <li><span class="en">AI & blockchain convergence — what it means for your industry</span><span class="th">การหลอมรวม AI และบล็อกเชน — ความหมายสำหรับอุตสาหกรรมของคุณ</span></li>
-            <li><span class="en">Ecosystem connections — engineers, legal, finance & advisors</span><span class="th">การเชื่อมต่อระบบนิเวศ — วิศวกร กฎหมาย การเงิน และที่ปรึกษา</span></li>
-          </ul>
+        <div class="pkg-body">
+          <div class="pkg-who">
+            <span class="en">Your business is navigating a world where digital assets and blockchain are becoming real considerations. This program gives you and your team a structured foundation — tailored to your industry, your size, and your questions.</span>
+            <span class="th">ธุรกิจของคุณกำลังดำเนินการในโลกที่สินทรัพย์ดิจิทัลและบล็อกเชนกลายเป็นสิ่งที่ต้องพิจารณาจริงๆ โปรแกรมนี้ให้รากฐานที่มีโครงสร้างสำหรับคุณและทีม</span>
+          </div>
+          <div class="pkg-topics">
+            <div class="pkg-topics-label"><span class="en">What we cover</span><span class="th">สิ่งที่เราครอบคลุม</span></div>
+            <ul>
+              <li><span class="en">Digital asset risk mapping — where is your exposure</span><span class="th">การทำแผนที่ความเสี่ยงสินทรัพย์ดิจิทัล</span></li>
+              <li><span class="en">Blockchain for business — transparency, security & speed</span><span class="th">บล็อกเชนสำหรับธุรกิจ — ความโปร่งใส ความปลอดภัย ความเร็ว</span></li>
+              <li><span class="en">Stablecoin & treasury strategy fundamentals</span><span class="th">พื้นฐานกลยุทธ์ Stablecoin และคลังสำรอง</span></li>
+              <li><span class="en">Token, platform & network opportunities for your business</span><span class="th">โอกาสโทเคน แพลตฟอร์ม และเครือข่ายสำหรับธุรกิจ</span></li>
+              <li><span class="en">Internal digital asset policy & operational guidance</span><span class="th">นโยบายสินทรัพย์ดิจิทัลภายในและคำแนะนำการดำเนินงาน</span></li>
+              <li><span class="en">Connections to developers, legal & financial specialists</span><span class="th">การเชื่อมต่อกับนักพัฒนา ที่ปรึกษากฎหมาย และผู้เชี่ยวชาญ</span></li>
+            </ul>
+          </div>
+          <div class="pkg-bottom">
+            <div class="pkg-price"><span class="en">Starting from ฿50,000</span><span class="th">เริ่มต้นจาก ฿50,000</span></div>
+            <div class="pkg-format"><span class="en">Tailored scope & sessions · Online or In-Person · English or Thai</span><span class="th">ขอบเขตและเซสชันที่ปรับได้ · ออนไลน์หรือพบตัว · ภาษาอังกฤษหรือไทย</span></div>
+          </div>
         </div>
-        <div class="pkg-bottom">
-          <div class="pkg-price"><span class="en">Starting from ฿90,000</span><span class="th">เริ่มต้นจาก ฿90,000</span></div>
-          <div class="pkg-format"><span class="en">Full-day or multi-session · On-site preferred · English or Thai</span><span class="th">เต็มวันหรือหลายเซสชัน · แนะนำพบตัว · ภาษาอังกฤษหรือไทย</span></div>
+      </div>
+
+      <div class="pkg" onclick="togglePkg(this)">
+        <div class="pkg-header">
+          <div>
+            <div class="pkg-audience"><span class="en">Corporate · Leadership Teams</span><span class="th">องค์กร · ทีมผู้บริหาร</span></div>
+            <div class="pkg-name"><span class="en">Corporate Workshop</span><span class="th">เวิร์กช็อปองค์กร</span></div>
+            <div class="pkg-tagline"><span class="en">"Our leadership team needs strategic clarity on digital assets."</span><span class="th">"ทีมผู้บริหารต้องการความชัดเจนเชิงกลยุทธ์เกี่ยวกับสินทรัพย์ดิจิทัล"</span></div>
+          </div>
+          <span class="pkg-toggle">+</span>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-who">
+            <span class="en">A professional, structured workshop for corporate leadership teams. Designed to equip decision-makers with the knowledge, frameworks, and confidence to understand and act on digital asset opportunities at an organisational level.</span>
+            <span class="th">เวิร์กช็อปที่มีความเป็นมืออาชีพและมีโครงสร้างสำหรับทีมผู้บริหารองค์กร ออกแบบเพื่อให้ผู้ตัดสินใจมีความรู้ กรอบ และความมั่นใจในการเข้าใจและดำเนินการเกี่ยวกับโอกาสของสินทรัพย์ดิจิทัล</span>
+          </div>
+          <div class="pkg-topics">
+            <div class="pkg-topics-label"><span class="en">What we cover</span><span class="th">สิ่งที่เราครอบคลุม</span></div>
+            <ul>
+              <li><span class="en">Blockchain infrastructure — strategic overview for leaders</span><span class="th">โครงสร้างพื้นฐานบล็อกเชน — ภาพรวมเชิงกลยุทธ์สำหรับผู้นำ</span></li>
+              <li><span class="en">Digital asset risk frameworks & scenario planning</span><span class="th">กรอบความเสี่ยงสินทรัพย์ดิจิทัลและการวางแผนสถานการณ์</span></li>
+              <li><span class="en">Token launches, platforms & market entry strategy</span><span class="th">การเปิดตัวโทเคน แพลตฟอร์ม และกลยุทธ์การเข้าสู่ตลาด</span></li>
+              <li><span class="en">Regulatory landscape — Thailand & global</span><span class="th">กฎระเบียบ — ไทยและระดับโลก</span></li>
+              <li><span class="en">AI & blockchain convergence — what it means for your industry</span><span class="th">การหลอมรวม AI และบล็อกเชน — ความหมายสำหรับอุตสาหกรรมของคุณ</span></li>
+              <li><span class="en">Ecosystem connections — engineers, legal, finance & advisors</span><span class="th">การเชื่อมต่อระบบนิเวศ — วิศวกร กฎหมาย การเงิน และที่ปรึกษา</span></li>
+            </ul>
+          </div>
+          <div class="pkg-bottom">
+            <div class="pkg-price"><span class="en">Starting from ฿90,000</span><span class="th">เริ่มต้นจาก ฿90,000</span></div>
+            <div class="pkg-format"><span class="en">Full-day or multi-session · On-site preferred · English or Thai</span><span class="th">เต็มวันหรือหลายเซสชัน · แนะนำพบตัว · ภาษาอังกฤษหรือไทย</span></div>
+          </div>
         </div>
       </div>
 
@@ -461,7 +535,7 @@ body.thai .th-b{display:block;}body.thai .en-b{display:none;}
   <div class="section-wrap">
     <div class="about-grid">
       <div class="about-img-wrap reveal">
-        <img class="about-img" src="https://raw.githubusercontent.com/gili-sudo/da-bkk/main/ChatGPT%20Image%20Feb%2016%2C%202026%2C%2001_48_37%20PM.png" alt="Gili Tuhsher in a consultation with a client in Bangkok Thailand">
+        <img class="about-img" src="https://raw.githubusercontent.com/gili-sudo/da-bkk/main/meeting.png" alt="Gili Tuhsher in a consultation with a client in Bangkok Thailand">
         <div class="about-img-caption">
           <span class="en">DA-BKK · Bangkok, Thailand · Digital Asset Advisory</span>
           <span class="th">DA-BKK · กรุงเทพฯ ประเทศไทย · ที่ปรึกษาสินทรัพย์ดิจิทัล</span>
@@ -583,14 +657,30 @@ body.thai .th-b{display:block;}body.thai .en-b{display:none;}
 function setLang(lang,btn){
   document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
-  document.body.classList.toggle('thai',lang==='th');
+  if(lang==='th'){
+    document.body.classList.add('thai');
+  } else {
+    document.body.classList.remove('thai');
+  }
+  localStorage.setItem('lang', lang);
 }
+// Restore language on page load
+(function(){
+  var saved = localStorage.getItem('lang');
+  if(saved === 'th'){
+    document.body.classList.add('thai');
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      b.classList.toggle('active', b.textContent.trim()==='TH');
+    });
+  }
+})();
 function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
 function closeMobile(){document.getElementById('mobileMenu').classList.remove('open');}
 
-entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('visible'),i*80);});
+var obs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e,i){if(e.isIntersecting)setTimeout(function(){e.target.classList.add('visible');},i*80);});
 },{threshold:0.08});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
 </script>
 
 <a class="wa-btn" href="https://wa.me/660822541089" target="_blank" rel="noopener">
